@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/shop.css">
     <link rel="stylesheet" href="./css/userProfile.css">
+    <link rel="stylesheet" href="./css/products.css">
     <!-- <link rel="stylesheet" href="./css/userProfile.css"> -->
 
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">

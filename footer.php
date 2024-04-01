@@ -62,6 +62,50 @@
 <script src="./js/scroll.js"></script>
 <script src="./js/copy.js"></script>
 
+<script>
+
+        var currentPage = window.location.href;
+
+
+        if (currentPage.includes("allproducts")) {
+
+            document.querySelector('.category-item1').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'All Products';
+
+        } else if (currentPage.includes("bagwframe")) {
+
+            document.querySelector('.category-item2').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'Bags With Frame';
+
+        } else if (currentPage.includes("back2back")) {
+
+            document.querySelector('.category-item3').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'Back to Back Vest';
+
+        } else if (currentPage.includes("bandolier")) {
+
+            document.querySelector('.category-item4').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'Bandoliers';
+
+        } else if (currentPage.includes("bags")) {
+
+            document.querySelector('.category-item5').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'Bags';
+
+        } else if (currentPage.includes("parts")) {
+
+            document.querySelector('.category-item6').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'Parts';
+
+        } else if (currentPage.includes("accessories")) {
+
+            document.querySelector('.category-item7').classList.add("active");
+            document.querySelector('.allprod-header').innerHTML = 'Accessories';
+
+        }
+
+    </script>
+
 
 </body>
 
