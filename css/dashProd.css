@@ -1,0 +1,235 @@
+.dash_prod_container {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.dash_prod_container h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: cubano, sans-serif;
+    padding: 40px 0 40px;
+}
+
+.dash_prod_container p {
+    color: #fff;
+    padding: 15px 0;
+    font-family: poppins, sans-serif;
+    user-select: none;
+}
+
+#add {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    font-family: poppins, sans-serif;
+    border-radius: 10px;
+    transition: 200ms all linear;
+}
+
+#add:hover {
+    box-shadow: 5px 5px 0 #000;
+    background: var(--signupColor);
+}
+
+
+
+
+
+
+
+
+
+/* PRODUCT DISPLAY */
+
+
+.product-display {
+    margin: 10px 20px 20px 240px;
+    padding: 20px;
+    background: var(--panelBlack);
+    border: 1px solid #000;
+    border-radius: 20px;
+    box-shadow: 0 5px 0 #000;
+}
+
+
+
+nav, .row {
+    display: flex;
+    align-items: stretch;
+    text-align: center;
+    color: #fff;
+    font-family: poppins, sans-serif;
+}
+
+nav {
+    padding: 20px;
+}
+
+.row {
+    background: var(--bgBlack);
+    border-radius: 10px;
+    margin-top: 5px;
+    align-items: center;
+}
+ 
+.col {
+    flex: 1;
+    text-align: center;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.colh {
+    flex: 1;
+    text-align: center;
+}
+
+.col img {
+    height: 80px;
+    border-radius: 100%;
+    border: 2px solid #000;
+}
+
+.edit, .delete {
+    padding: 10px 20px;
+    color: #fff;
+    font-family: cubano, sans-serif;
+    background: #000;
+    margin-right: 5px;
+    transition: 200ms linear all;
+    cursor: pointer;
+}
+
+.delete {
+    border: none;
+    height: 40px;
+    transform: translateY(-1px);
+}
+
+.edit:hover {
+    background: var(--loginColor);
+    box-shadow: 5px 5px 0 #000;
+}
+
+.delete:hover {
+    background: red;
+    box-shadow: 5px 5px 0 #000;
+}
+
+
+
+
+
+
+
+
+/* ADD PRODUCT PAGE */
+
+.addProductPanel form{
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+    margin-top: 10px;
+}
+
+.addLeftPanel,
+.addRightPanel {
+    background: var(--panelBlack);
+    padding: 20px;
+    border-radius: 20px;
+    width: 50%;
+    border: 1px solid #000;
+    box-shadow: 0 5px 0 #000;
+}
+
+.nameDescPanel,
+.imgPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    background: var(--panelBlack2);
+    border-radius: 20px;
+}
+
+#desc {
+    height: 100px;
+}
+
+
+.nameDescPanel input,
+.nameDescPanel textarea,
+.nameDescPanel select,
+.addRightPanel input {
+    background: var(--panelBlackDarker);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#price {
+    padding-left: 48px;
+}
+
+.nameDescPanel h2 {
+    color: #fff;
+    transform: translate(15px, -25px);
+    font-family: poppins, sans-serif;
+    font-size: .8rem;
+    user-select: none;
+}
+
+.imgPanel img {
+    height: fit-content;
+    background-size: contain;
+}
+
+#imgInp {
+    margin-top: 10px;
+}
+
+#productSavebtn {
+    float: right;
+    padding: 20px;
+    font-family: poppins, sans-serif;
+    margin-top: 20px;
+    background: #000;
+    transition: all 200ms linear;
+}
+
+#productSavebtn:hover {
+    box-shadow: 5px 5px 0 #000;
+    background: var(--signupColor);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+/* MODAL STYLES */ 
+
+.modal {
+    padding: 20px;
+    max-width: 50ch;
+    box-shadow: 0 0 10px #000;
+}   
+
+.modal::backdrop {
+    background: #0000009f;  
+}
+
+.modal p {
+    line-height: 50px;
+    font-family: poppins, sans-serif;
+}
+
+.modal .close-modal:hover {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "cubano";  
+    src: url('../font/cubano/Cubano.ttf') format('truetype');  
+  }
+
+@font-face {
+    font-family: "poppins";
+    src: url('../font/poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "montserrat";
+    src: url('../font/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+}

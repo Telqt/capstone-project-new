@@ -1,0 +1,68 @@
+.dash_container {
+    width: 100vh;
+    overflow-x: hidden;
+}
+
+.dash_panel {
+    width: 220px;
+    background: var(--panelBlack2);
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.dash_logo {
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+.dash_logo img {
+    width: 30%;
+}
+
+.dash_nav,
+.bot_nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.bot_nav {
+    margin: auto 0 20px 0;
+}
+
+
+.dash_nav a,
+.bot_nav a {
+    color: #fff;
+    position: relative;
+    padding: 20px 0 20px 60px;
+    font-family: poppins, sans-serif;
+    border-radius: 0 10px 10px 0;
+    margin-right: 10px;
+    transition: 100ms all linear;
+}
+
+.dash_nav a:hover,
+.bot_nav a:hover {
+    background: var(--bgBlack);
+}
+
+.dash_nav svg,
+.bot_nav svg {
+    height: 20px;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+}
+
+#t {
+    fill: #fff;
+}

@@ -1,0 +1,200 @@
+.login-container,
+.signup-container {
+    height: calc(100vh - 20px);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background: #fff; */
+    overflow: hidden;
+}
+
+.login-left,
+.signup-left {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 30vw;
+    padding: 5vw;
+    background: var(--bgColor);
+    /* box-shadow: 0 0 10px #00000017; */
+}
+
+.login-left form,
+.signup-left form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 5vh;
+}
+
+
+.login-left h1,
+.signup-left h1 {
+    padding: 10px 0;
+    font-size: 2.5rem;
+    font-family: cubano, sans-serif;
+    color: #fff;
+}
+
+.login-left p,
+.signup-left p {
+    padding: 20px 0;
+    color: #fff;
+    font-family: poppins, sans-serif;
+}
+
+.signup-left p a{
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 10px;
+    margin: 0 0 0 48px;
+    background: var(--loginColor);
+}
+
+.login-left p a {
+    color: #000;
+    padding: 4px 8px;
+    border-radius: 10px;
+    margin: 0 0 0 48px;
+    background: var(--highlightColor);
+}
+
+.field {
+    position: relative;
+    margin: 10px 0;
+}
+
+.login-left form input,
+.signup-left form input {
+    width: 280px;
+    padding: 0 16px 0 55px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    border: 1px solid #fff;
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+    font-family: poppins, sans-serif;
+    color: #fff;
+    background: none;
+}
+
+.login-left form input:focus ~ label,
+.login-left form input:valid ~ label,
+.signup-left form input:focus ~ label,
+.signup-left form input:valid ~ label {
+    top: -8px;
+    font-size: .8rem;
+}
+
+
+.login-left form svg,
+.signup-left form svg {
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+.login-left form svg path,
+.signup-left form svg path {
+    stroke: #fff;
+}
+.login-left form label,
+.signup-left form label {
+    position: absolute;
+    left: 55px;
+    top: 12px;
+    font-family: poppins, sans-serif;
+    background: #212121;
+    padding: 0 5px;
+    color: #fff;
+    transition: 200ms all ease-in-out;
+    user-select: none;
+}
+
+
+.login-left form .submitbtn {
+    width: 346px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    border: 1px solid #000;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #000;
+    transition: 200ms all linear;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0;
+}
+
+.signup-left form .submitbtn {
+    width: 346px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    border: 1px solid #000;
+    color: #fff;
+    background: #000;
+    transition: 200ms all linear;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.login-left form .submitbtn:hover {
+    background: var(--loginColor);
+    box-shadow: 5px 5px 0 #000;
+    cursor: pointer;
+}
+
+.signup-left form .submitbtn:hover {
+    background: var(--signupColor);
+    box-shadow: 5px 5px 0 #000;
+    cursor: pointer;
+}
+
+
+.login-right {
+    width: 60vw;
+    background: url('../img/blackcamo.jpg');
+    background-size: contain;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-right::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #212121, #212121d3, #2121219c, #2121216b, #21212144, #21212100, #21212100, #21212100, #21212100);
+}
+
+.login-right p {
+    font-size: 3rem;
+    z-index: 5;
+    font-family: cubano, sans-serif;
+    text-align: start;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    width: 40vw;
+}
+
+.login-right img {
+    position: absolute;
+    height: 90vh;
+    transform: translate(0, 15%);
+    visibility: hidden;
+}

@@ -1,0 +1,20 @@
+.dash_users_container {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.dash_users_container h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: cubano, sans-serif;
+    padding: 40px 0 40px;
+}
+
+.dash_users_display {
+    margin: 10px 20px 20px 10px;
+    padding: 20px;
+    background: var(--panelBlack);
+    border: 1px solid #000;
+    border-radius: 20px;
+    box-shadow: 0 5px 0 #000;
+}

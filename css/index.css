@@ -1,0 +1,141 @@
+:root {
+    --bgBlack: #212121;
+    --panelBlack: #404040;
+    --panelBlack2: #272727;
+    --panelBlackDarker: #1d1d1d;
+    --sideDashboard: #272727;
+    --highlightColor: #abf600;
+    --loginColor: #1877f2;
+    --signupColor: #36a420;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+.scrollPath {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: .375rem;
+    height: 100%;
+    background: rgba(255, 255, 255, .05);
+}
+
+#progressbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: .374rem;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+    z-index: 2;
+}
+
+@keyframes animate {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#progressbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+
+#progressbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+
+body {
+    background: var(--bgBlack);
+    scroll-behavior: smooth;
+}
+
+
+
+/*   HERO  */
+
+.hero {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hero-left {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 40vh;
+    width: 40vw;
+    padding: 10vw;
+}
+
+.hero-left h1 {
+    color: #fff;
+    font-family: cubano, sans-serif;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.hero-left p {
+    color: #fff;
+    font-family: poppins, sans-serif;
+    margin: 40px 0;
+    letter-spacing: 3px;
+}
+
+.shop_now {
+    text-decoration: none;
+    font-family: poppins, sans-serif;
+    background: rgb(200, 0, 0);
+    color: white;
+    padding: 20px 30px;
+    cursor: pointer;
+    border: none;
+    font-weight: normal;
+    user-select: none;
+    border-radius: 10px;
+    transition: 200ms all linear;
+}
+
+.shop_now:hover {
+    background: rgb(255, 20, 20);
+    box-shadow: 5px 5px 0 #000;
+}
+
+.shop_now:active {
+    background: rgb(255, 95, 95);
+}
+
+.hero-right {
+    position: relative;
+    width: 60vw;
+    height: 100vh;
+}
+
+.hero-right img {
+    position: absolute;
+    height: 80vh;
+    transform: translate(-10%, 20%);
+}
