@@ -106,6 +106,26 @@
 
     </script>
 
+    <script>
+        const openModals = document.querySelectorAll('.open-modal');
+        const closeModals = document.querySelectorAll('.close-modal');
+
+        openModals.forEach(openModal => {
+            openModal.addEventListener('click', (event) => {
+                const modalId = event.target.getAttribute('data-modal-id');
+                const modal = document.getElementById(modalId);
+                modal.showModal();
+            });
+        });
+
+        closeModals.forEach(closeModal => {
+            closeModal.addEventListener('click', (event) => {
+                const modal = event.target.closest('dialog');
+                modal.close();
+            });
+        });
+    </script>
+
 
 </body>
 
