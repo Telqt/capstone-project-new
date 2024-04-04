@@ -27,12 +27,13 @@ include_once("productMainCategorypanel.php");
                         <img src="' . $row['prodPicture'] . '" alt="product">
                         <p class="prodname">'. $row['prodName'] .'</p>
                         <p class="price">₱'. $row['prodPrice'] .'</p>
-                        <p class="addtocart" onclick="event.preventDefault(); location.href="addtocart.php?prodID=' . $row['prodID'] . '?quantity=1">Add to Cart</p>
+                        <p class="addtocart" onclick="event.preventDefault(); location.href=\'addtocart.php?prodID=' . $row['prodID'] . '&quantity=1\'">Add to Cart</p>
                     </a>
                     
                     ';
                 }
             ?>
+
 
             </div>
         </div>

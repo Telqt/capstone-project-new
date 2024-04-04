@@ -13,7 +13,7 @@ if (isset($_GET['prodID'])) {
 
     if ($deleteQuery) {
         // Redirect back to the cart page after deletion
-        header("Location: cart.php");
+        header("Location: cart.php?itemdeletedsuccessfully");
         exit();
     } else {
         echo "Error deleting cart item: " . mysqli_error($conn);

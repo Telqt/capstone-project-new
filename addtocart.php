@@ -1,43 +1,75 @@
 <?php
 session_start();
 
-// Check if the product ID and quantity are provided
+
 if (isset($_GET['prodID']) && isset($_GET['quantity'])) {
     $prodID = $_GET['prodID'];
     $quantity = $_GET['quantity'];
     
-    // Check if the user is logged in
+
+
+
     if (isset($_SESSION['UID'])) {
         $UID = $_SESSION['UID'];
         
-        // Connect to the database
         include_once("./backend/dbh.php");
+
+        //check if user has cart
+        $sql = mysqli_query($conn, "SELECT * FROM user_cart WHERE UID = $UID");
+
+        //if user has cart, go here
+        if (mysqli_num_rows($sql) > 0) {
+
+            //check if the added product is already in the cart
+            $checkQuery = mysqli_query($conn, "SELECT * FROM users AS U JOIN user_cart AS UC ON U.UID = UC.UID JOIN cart_items AS CI ON UC.cartID = CI.cartID WHERE CI.prodID = $prodID;");
         
-        // Check if the user already has the product in their cart
-        $checkQuery = mysqli_query($conn, "SELECT * FROM User_Cart WHERE UID = $UID AND prodID = $prodID");
-        
-        if (mysqli_num_rows($checkQuery) > 0) {
-            // Product already exists in the user's cart, update quantity
-            $updateQuery = mysqli_query($conn, "UPDATE User_Cart SET quantity = quantity + $quantity WHERE UID = $UID AND prodID = $prodID");
-            
-            if (!$updateQuery) {
-                echo "Error updating cart: " . mysqli_error($conn);
-            }
+            if (mysqli_num_rows($checkQuery) > 0) {
+
+                // if the product exists in the cart, add quantity
+                $row = mysqli_fetch_assoc($checkQuery);
+                $cartID = $row["cartID"];
+
+                $updateQuery = mysqli_query($conn, "UPDATE cart_items AS CI JOIN user_cart AS UC ON UC.cartID = CI.cartID SET CI.quantity = CI.quantity + $quantity  WHERE CI.cartID = $cartID AND CI.prodID = $prodID;");
+
+                
+                if (!$updateQuery) {
+                    echo "Error updating cart: " . mysqli_error($conn);
+                }
+                
+                header("Location: " . $_SERVER['HTTP_REFERER']. "?addedtocart");
+                exit();
+            } 
+            else {
+                //if the product is new to the cart
+                // insert product to created cart
+
+                $getCartID = mysqli_query($conn,"SELECT * FROM user_cart WHERE UID = $UID");
+                $row = mysqli_fetch_assoc($getCartID);
+                $cartID = $row["cartID"];
+
+                $insertProd = mysqli_query($conn,"INSERT INTO cart_items (cartID, prodID, quantity) VALUES ($cartID, $prodID, $quantity)");
+
+                header("Location: " . $_SERVER['HTTP_REFERER']. "?addedtocart");
+                exit();
+            } 
         } else {
-            // Product does not exist in the user's cart, insert new record
-            $insertQuery = mysqli_query($conn, "INSERT INTO User_Cart (UID, prodID, quantity) VALUES ($UID, $prodID, $quantity)");
-            
-            if (!$insertQuery) {
-                echo "Error adding to cart: " . mysqli_error($conn);
-            }
-        }
-        
-        // Close the database connection
+        //if user does not have cart, go here
+        // create a new cart for user
+        $insertCart = mysqli_query($conn, "INSERT INTO user_cart (UID) VALUES ($UID)");
+        $getCartID = mysqli_query($conn,"SELECT * FROM user_cart WHERE UID = $UID");
+
+        $row = mysqli_fetch_assoc($getCartID);
+        $cartID = $row["cartID"];
+
+        // insert product to created cart
+        $insertProd = mysqli_query($conn,"INSERT INTO cart_items (cartID, prodID, quantity) VALUES ($cartID, $prodID, $quantity)");
+
         mysqli_close($conn);
         
-        // Redirect back to the previous page
-        header("Location: " . $_SERVER['HTTP_REFERER']);
+
+        header("Location: " . $_SERVER['HTTP_REFERER']. "?addedtocart");
         exit();
+        }
     } else {
         echo "User is not logged in.";
     }

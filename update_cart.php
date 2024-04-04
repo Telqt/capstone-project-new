@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $quantity = $_POST['quantity'];
 
     // Update the quantity of the cart item
-    $updateQuery = mysqli_query($conn, "UPDATE Cart_Items SET quantity = $quantity WHERE prodID = $prodID");
+    $updateQuery = mysqli_query($conn, "UPDATE cart_items SET quantity = $quantity WHERE prodID = $prodID");
 
     if ($updateQuery) {
         // Redirect back to the cart page after updating
