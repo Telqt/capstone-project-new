@@ -12,6 +12,18 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
+
+
+.cart_btn_sticky svg {
+    height: 20px;
+}
+
+.cart_btn_sticky svg path {
+    fill: #000;
+}
+
+
+
 header .logo {
     margin-left: 40px;
 }
@@ -88,4 +100,32 @@ header .login_panel .signup_btn:hover {
 header .login_panel .logout_btn:hover {
     background: red;
     color: #fff;
+}
+
+
+
+.cart_btn_sticky {
+    position: absolute;
+    right: 3%;
+    top: 100px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 100ms linear;
+    z-index: 99;
+}
+
+.cart_btn_sticky:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background: var(--signupColor);
+    box-shadow: 5px 5px 0 #000;
+}
+
+
+.cart_btn_sticky:hover svg path{
+    fill: #fff;
 }

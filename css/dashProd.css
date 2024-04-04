@@ -53,7 +53,8 @@
 
 
 
-nav, .row {
+nav, 
+.row {
     display: flex;
     align-items: stretch;
     text-align: center;
@@ -115,6 +116,7 @@ nav {
     background: red;
     box-shadow: 5px 5px 0 #000;
 }
+
 
 
 

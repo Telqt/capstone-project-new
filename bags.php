@@ -28,6 +28,7 @@ include_once("productMainCategorypanel.php");
                         <img src="' . $row['prodPicture'] . '" alt="product">
                         <p class="prodname">'. $row['prodName'] .'</p>
                         <p class="price">₱'. $row['prodPrice'] .'</p>
+                        <p class="addtocart">Add to Cart</p>
                     </a>
                     
                     ';

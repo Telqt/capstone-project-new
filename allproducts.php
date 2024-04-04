@@ -23,10 +23,11 @@ include_once("productMainCategorypanel.php");
                 while ($row = mysqli_fetch_array($select)) {
                     echo '
                     
-                    <a href="addtocart.php?prodID='. $row['prodID'] .'" class="product open-modal">
+                    <a href="productdetails.php?prodID='. $row['prodID'] .'" class="product">
                         <img src="' . $row['prodPicture'] . '" alt="product">
                         <p class="prodname">'. $row['prodName'] .'</p>
                         <p class="price">₱'. $row['prodPrice'] .'</p>
+                        <p class="addtocart" onclick="event.preventDefault(); location.href="addtocart.php?prodID=' . $row['prodID'] . '?quantity=1">Add to Cart</p>
                     </a>
                     
                     ';

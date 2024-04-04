@@ -162,11 +162,32 @@
     text-overflow: ellipsis;
 }
 
+.product .addtocart {
+    text-align: center;
+    color: red;
+    background: #fff;
+    border: 1px solid #fff;
+    width: 100%;
+    padding: 10px 0;
+    /* height: 10px; */
+    font-family: cubano, sans-serif;
+    transition: 200ms linear all;
+    z-index: 98;
+}
+
+.product:hover .price {
+    color: #000;
+}
+
 .product .price {
-    background: red;
     color: #fff;
     width: 100%;
     padding: 10px;
-    /* height: 10px; */
     font-family: cubano, sans-serif;
+}
+
+.product .addtocart:hover {
+    background: red;
+    color: #fff;
+    border: red 1px solid;
 }
